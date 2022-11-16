@@ -526,7 +526,7 @@ const direction:Direction = Direction.NORTH;
 Object type:
 
 1) using type
-
+```
 type Person = {
 	name:string;
 	age: number
@@ -543,9 +543,10 @@ addPerson({name:'Roger'}); // error
 let p:Person = {
 	name:'Roger', age:34
 }
+```
 
 2) interface
-
+```
 interface Product {
 	name: string;
 	price:number
@@ -594,3 +595,4 @@ class TvRenderer implements Renderer {
 
 let render:Renderer = can refer to instance of TvRender or WebRender
 
+```
