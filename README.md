@@ -596,3 +596,57 @@ class TvRenderer implements Renderer {
 let render:Renderer = can refer to instance of TvRender or WebRender
 
 ```
+
+npm install -g typescript
+-------
+
+"any" type and "unknown" type
+
+let data:any = 10;
+
+data =  "test";
+
+data = true;
+
+---
+
+let data:unknown = 10;
+
+data =  "test";
+
+data = true;
+
+Difference:
+
+a.ts
+
+function invoke(callback:any) {
+	callback();
+}
+
+invoke("Hello!!!");
+
+tsc a.ts ==> a.js
+node a.js
+Errors:
+TypeError: callback is not a function
+
+----
+unknown forces type checking before using:
+
+function invoke(callback:unknown) {
+	if(typeof callback === 'function') {
+		callback();
+	} else if(typeof callback === 'string') {
+		console.log(callback);
+	}
+}
+
+invoke("Hello!!!");
+----
+
+"as" for type assertion:
+
+=====================
+
+
