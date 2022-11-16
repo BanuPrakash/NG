@@ -485,3 +485,112 @@ npm test
 npm i mocha -D
 "test": "mocha --reporter spec"
 
+===============================================
+
+TypeScript
+
+* Provide an optional type system for JavaScript
+
+var name = "Tim";
+name = 10;
+name = true;
+
+With TS:
+
+var name:string = "Tim";
+
+name = 10; // tsc will throw an error
+
+tsc a.ts --> a.js
+
+* Enhance code quality and understandabilty
+* catch issues at compilation time rather than runtime
+
+---
+
+Basic Types:
+number, string, boolean
+
+var name:string = "Tim";
+var age:number = 22;
+
+Complex types: enum, object, array
+
+enum Direction {
+	NORTH : 'North',
+	EAST: 'East'
+}
+
+const direction:Direction = Direction.NORTH;
+
+Object type:
+
+1) using type
+
+type Person = {
+	name:string;
+	age: number
+}
+
+function addPerson(person:Person) {
+	...
+}
+
+addPerson({name:'Roger', age:34});
+
+addPerson({name:'Roger'}); // error
+
+let p:Person = {
+	name:'Roger', age:34
+}
+
+2) interface
+
+interface Product {
+	name: string;
+	price:number
+}
+
+--> interface is extendable [Generalization and Specialization relationship] ==> IS A
+
+interface Mobile extends Product {
+	connectivity: string
+}
+
+interface Tv extends Product {
+	screenType:string,
+	screenSize:string
+}
+
+
+let sony:Tv = {
+	name:'Sony OLED',
+	price:189000.00,
+	screenType: 'OLED',
+	screenSize:'64inch'
+}
+
+---> interface for Realization relationship
+
+interface Renderer {
+	render():void;
+}
+
+class WebRenderer implements Renderer {
+	// code
+
+	render():void {
+			// logic
+	}
+}
+
+class TvRenderer implements Renderer {
+	// code
+
+	render():void {
+			// logic
+	}
+}
+
+let render:Renderer = can refer to instance of TvRender or WebRender
+
