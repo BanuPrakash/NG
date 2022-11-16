@@ -40,6 +40,7 @@ JS5 --> ES5 version --> ECMAScript 5
 
 file.js
 
+```
 console.log("Start!!!");
 
 setInterval(function doTask() {
@@ -53,6 +54,7 @@ document.getElementById("btn")
 
 console.log("bye!!!");
 
+ 
 
 class TimerThread extends Thread {
 
@@ -67,7 +69,7 @@ class TimerThread extends Thread {
 		}
 	}
 }
-
+```
 
 DOM --> Document Object Model ==> document tree in the form of Object
 
@@ -83,7 +85,7 @@ ES 6 --> "let" can be used to declare a variable [ block level scope]
 var vs let
 
 ES 5 "var"
-
+```
 var g = 100; // global variable
 
 function doTask() {
@@ -97,12 +99,12 @@ function doTask() {
 console.log(g, c);  // g and c are global scope
 
 doTask();
-
+```
 ===================
 
 
 ES 6 "let"
-
+```
 var g = 100; // global variable
 
 function doTask() {
@@ -116,9 +118,9 @@ function doTask() {
 console.log(g, c);  // g and c are global scope
 
 doTask();
-
+```
 ------------------------------------------------
-
+```
 function add(x, y) {
 	return x + y;
 }
@@ -132,6 +134,7 @@ function add(x, y) {
 console.log(add(4,5)); // undefined
 
 var a; //undefined
+```
 
 undefined, number, string, boolean, object, array
 
@@ -148,7 +151,7 @@ debit() --> actions
 --> Class / function / Type --> to declare a template for object creation
 
 1)
-
+```
 var person = new Object();
 person.id = 10; // state
 person.name = "Tim"; // state
@@ -229,3 +232,4 @@ ref(); // gets person.name
 
 ===========================================
 
+```
