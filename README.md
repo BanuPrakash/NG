@@ -178,7 +178,7 @@ Person.prototype.getName = function() {
 	return this.name;
 }
 // add object behaviour
-Person.prototye.setName = function(n) {
+Person.prototype.setName = function(n) {
 	this.name = n;
 }
 
