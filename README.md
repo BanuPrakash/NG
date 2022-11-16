@@ -14,7 +14,7 @@ banuprakashc@yahoo.co.in
 
 https://www.linkedin.com/in/banu-prakash-50416019/
 
-https://github.com/BanuPrakash/Angular
+https://github.com/BanuPrakash/NG
 ----------------------------------------------------------
 
 Softwares Required:
