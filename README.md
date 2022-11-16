@@ -305,7 +305,7 @@ console.log(adder(10,2));
 console.log(adder(10,5));
 
 HOF:
-
+```
 function adder(base) {
 	return function(no) {
 		return base + no;
@@ -316,8 +316,8 @@ let fiveAdder = adder(5);
 
 console.log(fiveAdder(2));  // 7
 console.log(fiveAdder(4));  // 9
+```
 
-======================
 memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again
 React.memo()
 
@@ -332,5 +332,57 @@ getEmployee(4) -------> get from cache
 fibanocci(34) ==> 5702887 ==> cache
 
 fibanocci(34) ==> 0 ms
+
+
+NodeJS
+--> Platform with V8 JavaScript engine and Libuv libraries for Async operations [ instead of WebApi]
+
+Where can I use NodeJS?
+1) Building Traditional web applications like [php / Servlet & JSP / ASP/ ...]
+2) Building RESTful WS / GraphQL WS like --> Spring Boot / Jersey / MVC Razor ==> return JSON / XML
+3) Streaming Platform ==> Netflix / Prime / Hotstar
+4) Realtime applications ==> ChatBot
+5) Building client side web application development
+
+
+Building client side web application development
+* We might write code in ES6 or 7 / TypeScript / CoffeeScript /LiveScript / DART
+--> JS engine understands ES5
+--> NodeJS platform can be used to transcompile --> JS
+
+* Unit Testing & E2E Testing
+
+* Bundling
+	a.js, b.js, c.js, d.js
+
+	index.html
+		<script src="a.js"></script>
+		<script src="b.js"></script>
+		<script src="c.js"></script>
+		<script src="d.js"></script>
+		<script src="e.js"></script>
+
+	Problem 1: --> n + 1 hits to Server
+	Problem 2: --> order matters [ e depends on d, d depends on c ,,,,]
+
+	Solution: use NodeJS platform to bundle "bundle.js"
+		index.html
+		<script src="bundle.js"></script>
+
+* Minify, Uglify your code
+
+====================
+npm init --y
+
+Node uses Package Manager
+* manage dependencies [ using 3rd party libraries] --> download dependencies
+* publish libraries
+* run scripts
+--> NPM {default} / YARN / PNPM / RUSH ==> Maven / Gradle / PIP
+
+
+
+
+	
 
 
