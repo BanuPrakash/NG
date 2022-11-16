@@ -293,3 +293,44 @@ let add = (x,y) => x + y;
 
 ============
 
+* Function return a function --> HOF
+
+Pure function
+
+function adder(x, y) {
+	return x + y;
+}
+
+console.log(adder(10,2));
+console.log(adder(10,5));
+
+HOF:
+
+function adder(base) {
+	return function(no) {
+		return base + no;
+	}
+}
+
+let fiveAdder = adder(5);
+
+console.log(fiveAdder(2));  // 7
+console.log(fiveAdder(4));  // 9
+
+======================
+memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again
+React.memo()
+
+Cache
+Angular / React 
+getEmployee(4) -------> RESTful Web Services ------> Database ---> result to JSON --> send JSON to client --> cache
+
+getEmployee(5) -------> RESTful Web Services ------> Database ---> result to JSON --> send JSON to client
+
+getEmployee(4) -------> get from cache
+
+fibanocci(34) ==> 5702887 ==> cache
+
+fibanocci(34) ==> 0 ms
+
+
