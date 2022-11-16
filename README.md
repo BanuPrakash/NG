@@ -649,4 +649,84 @@ invoke("Hello!!!");
 
 =====================
 
+Promise API:
+
+=======================
+
+JavaScript Build tools:
+* Grunt 
+* Gulp
+* Webpack
+
+Grunt is a JavaScript task runner, a tool used to automatically perform frequent tasks such as minification, compilation, unit testing, and linting. 
+
+
+Webpack ==> default build tool which comes with React, Angular, Vue ==> and other frameworks for scafollding code
+
+---------------------
+
+md webpackexample
+cd webpackexample
+webpackexample> npm init --y
+
+webpackexample> npm i webpack webpack-cli webpack-dev-server typescript ts-loader html-webpack-plugin -D
+
+webpackexample> tsc --init
+
+creates tsconfig.json
+
+```
+export default class Person {
+    private name:string;
+    private age:number;
+
+    public constructor(name:string, age:number) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+```
+
+npm start
+npm test
+
+Now:
+npm run dev
+or
+npm run prod
+
+The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. 
+This is especially useful for webpack bundles that include a hash in the filename which changes every compilation.
+
+index.html
+<script src="bundle.js"></script>
+
+Many bundles might be created based on project
+
+bundle.js
+vendor.js [ angular]
+lib.js [ 3rd party]
+
+Development mode files names contain hashing
+bundle@df34%334.js ==> cache
+bundle#fvfdf6sd.js
+bundle!dgdf%355.js
+
+
+ plugins: [new HtmlWebpackPlugin({
+    template:path.resolve(__dirname, "src", "index.html")
+  })]
+
+
+ package.json
+ "scripts": {
+    "start": "webpack serve --mode development",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  }
+
+  npm start 
+
+
 
