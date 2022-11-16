@@ -372,13 +372,62 @@ Building client side web application development
 * Minify, Uglify your code
 
 ====================
-npm init --y
+
 
 Node uses Package Manager
 * manage dependencies [ using 3rd party libraries] --> download dependencies
 * publish libraries
 * run scripts
 --> NPM {default} / YARN / PNPM / RUSH ==> Maven / Gradle / PIP
+
+
+npm init --y
+
+creates package.json ==> like pom.xml
+* file where "dependecies" are configured / scripts are configured
+
+--> all team members uses same "package.json"
+
+npm install lodash
+npm install jest chai -D
+	// needed in production
+ "dependencies": {
+    "lodash": "^4.17.21"
+  },
+
+  // needed only in development stage
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "jest": "^29.3.1"
+  }
+
+"node_modules" folder will have all the dependencies --> and transitive dependencies downloaded.
+
+Other team members:
+
+$ npm install
+
+uses package.json and downloads
+
+ "lodash": "4.17.21" ==> exact version
+  "lodash": "^4.17.21" ==> "4.17.21 are latest version"
+  "lodash": "~4.17.21" ==> major version has to be "4"/ "minor" and "path" can be latest
+
+
+=================
+
+By default one file is one module ==> all are private
+
+Module System:
+1) CommonJS ==> default in NodeJS
+2) ES 6 module system
+3) AMD
+4) System.js
+5) UMD
+6) Plain JS module system
+
+
+
 
 
 
