@@ -233,3 +233,63 @@ ref(); // gets person.name
 ===========================================
 
 ```
+
+High Order Functions:
+* Functions which accept function as argument
+* Function return a function
+--> treat function as first-class members
+
+Without HOF:
+
+var data = [4,7,2,9,22,12];
+
+for(i = 0; i< data.length; i++) {
+	console.log(data[i]);
+}
+
+for(i = 0; i< data.length; i++) {
+	alert(data[i]);
+}
+
+for(i = 0; i< data.length; i++) {
+	writeToFile(data[i]);
+}
+
+With HOF:
+
+function forEach(elems, action) {
+	for(i = 0; i< elems.length; i++) {
+		action(elems[i]);
+	}
+}
+
+forEach(data, console.log);
+
+forEach(data, alert);
+
+Commonly used HOF:
+1) forEach
+2) filter
+3) map
+4) reduce
+5) find
+
+https://rxmarbles.com/
+
+function add(x,y) {
+	return x + y;
+}
+
+Arrow fn:
+
+let add = (x,y) => {
+	return x + y;
+}
+
+OR
+
+let add = (x,y) => x + y;
+
+
+============
+
