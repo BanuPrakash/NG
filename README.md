@@ -426,12 +426,62 @@ Module System:
 5) UMD
 6) Plain JS module system
 
+// import a module
+
+const http = require('http'); // gets from 'pre-loaded in NodeJS'
+const lodash = require('lodash'); // doesn't find "pre-loaded"; gets from 'node_modules'
+
+const {add,subtract} = require('./lib'); // relative path to pick from project
+
+
+package.json
+
+"scripts": {
+    "start": "node app/server.js"
+ }
+
+npm start
+
+================
+
+Unit testing in JavaScript:
+1) Jasmine
+2) Mocha
+3) JEST
 
 
 
+Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.	
 
+```
+const {expect} = require('chai');
+const {add,subtract} = require('../app/lib');
+// AAA ==> Assemble Action Assert
 
+// test suite
+describe("testing lib module", () => {
+    // test spec
+    it("testing add", () => {
+        let result = add(4,5);
+        let expected = 9;
+        expect(result).to.be.eq(expected);
+    });
+     // test spec
+     it("testing subtract", () => {
+        let result = subtract(10,4);
+        let expected = 6;
+        expect(result).to.be.eq(expected);
+    });
+});
 
-	
+```
+ "scripts": {
+    "start": "node app/server.js",
+    "test": "jest"
+  },
 
+npm test
+
+npm i mocha -D
+"test": "mocha --reporter spec"
 
