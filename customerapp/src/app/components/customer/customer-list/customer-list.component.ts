@@ -9,7 +9,7 @@ import { Customer } from 'src/app/shared/model/Customer';
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
   original: Customer[] = [];
-  searchText:string = "Hello!!!";
+  searchText:string = "";
   constructor() { }
 
   ngOnInit(): void {
