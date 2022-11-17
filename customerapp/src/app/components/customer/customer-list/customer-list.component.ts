@@ -14,32 +14,44 @@ export class CustomerListComponent implements OnInit {
     this.customers = [{
       "id": 1,
       "firstName": "Rachel",
-      "lastName": "Green "
+      "lastName": "Green ",
+      "gender": "female",
+      "address": "M G Road"
     },
     {
       "id": 2,
       "firstName": "Chandler",
-      "lastName": "Bing"
+      "lastName": "Bing",
+      "gender": "male",
+      "address": "M G Road"
     },
     {
       "id": 3,
       "firstName": "Joey",
-      "lastName": "Tribbiani"
+      "lastName": "Tribbiani",
+      "gender": "male",
+      "address": "M G Road"
     },
     {
       "id": 4,
       "firstName": "Monica",
-      "lastName": "Geller"
+      "lastName": "Geller",
+      "gender": "female",
+      "address": "M G Road"
     },
     {
       "id": 5,
       "firstName": "Ross",
-      "lastName": "Geller"
+      "lastName": "Geller",
+      "gender": "male",
+      "address": "M G Road"
     },
     {
       "id": 6,
       "firstName": "Phoebe",
-      "lastName": "Buffay"
+      "lastName": "Buffay",
+      "gender": "female",
+      "address": "M G Road"
     }
     ];
   }
