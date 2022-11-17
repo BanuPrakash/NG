@@ -942,8 +942,6 @@ Why?
 The Angular CLI is a command-line interface tool that you use to initialize, develop, 
 scaffold, and maintain Angular applications directly from a command shell.
 
-npm install -g @angular/cli
-
 Other options:
 webpack --> configure ts-loader, css-loader, Html-webpack-plugin, install dependecies
 
@@ -955,5 +953,40 @@ Ahead of Time ==> Compiled code is loaded on browser
 "jit" ==> Just In Time Compiler ==> Browser will have angular compiler loaded
 
 angular.json ==> custom config ==> webpack.config.js
+
+
+npm install -g @angular/cli
+
+create scafolding code:
+
+ng new customerapp
+No to Router
+select CSS
+
+customerapp> npm i bootstrap@4.6.0 font-awesome@4.7.0
+
+======
+
+Adding new Component:
+
+ng g c components/customer/customer-list
+
+FCP --> Core Web Vital --> First Contentful Paint
+constructor() ==> default initialization
+ngOnInit() ==> actual data from API call
+
+if init is done in constructor() ==> blank screen for long duration
+
+
+in Angular Structural directives start with "*"
+==> conditionaly create or remove DOM
+
+
+copy "images" from "angular_share.zip" into "assets folder"
+
+==============
+
+Resume @ 2:00
+
 
 
