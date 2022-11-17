@@ -1009,3 +1009,30 @@ app.module.ts
  imports: [
     BrowserModule, FormsModule
   ],
+
+==========================
+
+Testing 
+* Unit Testing Components
+--> Angular Test Bed built on top of Jasmine Unit testing Framework
+--> React TEsting Library is built on top of JEST
+--> Test without tight coupling with other compoents / services
+
+Mock Testing
+--> Mock the behaviour of dependency
+
+---
+
+Cypress --> A complete end-to-end testing experience.
+
+Protractor
+
+ng add @cypress/schematic
+
+for e2e testing application should be running
+
+======================
+
+Resume @ 4:10
+
+

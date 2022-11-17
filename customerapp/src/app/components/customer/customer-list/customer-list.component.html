@@ -42,8 +42,10 @@
       </div>
     </div>
    </div>
-   
-<app-customer-card 
+  
+<app-customer-card *ngIf="displayType === 'card'"
 (delEvent) = "deleteCustomerFromList($event)"
 [customers] = "customers">
 </app-customer-card>
+
+<app-customer-row *ngIf="displayType === 'row'"></app-customer-row>

@@ -10,6 +10,7 @@ export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
   original: Customer[] = [];
   searchText:string = "";
+  displayType:string = "card";
   constructor() { }
 
   ngOnInit(): void {
