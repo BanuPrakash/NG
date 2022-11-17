@@ -949,3 +949,11 @@ webpack --> configure ts-loader, css-loader, Html-webpack-plugin, install depend
 
 ============
 
+Angular Compiler:
+"aot" ==> default from Angular 8 version
+Ahead of Time ==> Compiled code is loaded on browser
+"jit" ==> Just In Time Compiler ==> Browser will have angular compiler loaded
+
+angular.json ==> custom config ==> webpack.config.js
+
+
