@@ -8,10 +8,12 @@ import { Customer } from 'src/app/shared/model/Customer';
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
+  original: Customer[] = [];
+  searchText:string = "Hello!!!";
   constructor() { }
 
   ngOnInit(): void {
-    this.customers = [{
+    this.customers = this.original = [{
       "id": 1,
       "firstName": "Rachel",
       "lastName": "Green ",
@@ -58,5 +60,11 @@ export class CustomerListComponent implements OnInit {
 
   deleteCustomerFromList(id:number) {
     this.customers = this.customers.filter(c => c.id !== id);
+  }
+
+  filterCustomers() {
+    this.customers = 
+      this.original
+      .filter(c => c.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) >= 0)
   }
 }
