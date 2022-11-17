@@ -1,8 +1,11 @@
 import Person from "./Person"; // ES 6 module system
 import filter, {Product, forEach} from './lib';
+import {random} from 'lodash';
+
+console.log(random(1,100));
 
 let p1:Person = new Person("Harry", 31);
-console.log(p1.getName(), p1.getAge());
+console.log(p1.getName(), p1.getAge(), p1["subject"]);
 
 
 let nos:number[] = [5,2,55,42,31]

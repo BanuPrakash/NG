@@ -726,7 +726,123 @@ bundle!dgdf%355.js
     "prod": "webpack --mode production"
   }
 
-  npm start 
+  npm start
+
+  ===============
+
+  Day 2
+  
+Recap:
+JS , NodeJS, Webpack
+TypeScript
+
+Webpack:
+* webpack-cli
+* webpack-dev-server --> lite http-server
+* html-webpack-plugin --> automate adding <script></script> tags in html
+* ts-loader , "tsc" 
+
+tsc --init
+this creates tsconfig.json
+
+ "sourceMap": true, 
+
+ bundle.js ==> SourceMap ===> Person.ts , lib.ts, index.ts
+
+
+-------------------------
+JavaScript in TypeScript:
+
+Solution 1:
+npm i lodash [ is a js module]
+
+typings.d.ts
+declare module 'lodash' {
+    export function random(min:number, max:number): number
+}
+
+index.ts
+import {random} from 'lodash';
+console.log(random(1,100));
+
+---------------
+
+Solution 2:
+https://github.com/DefinitelyTyped/DefinitelyTyped
+
+npm i @types/lodash -D
+
+https://www.npmjs.com/
+
+================================================================
+
+
+Decorator like extends is for Code re-usability
+
+class Component {
+	...
+}
+// inherit from Component
+class PersonComponent extends Component {
+	// additional state and behaviour
+}
+
+class PersonComponent extends Component, SomeA, SomeB { // error
+
+Using Decorator
+
+@Component({
+	.. features
+})
+class PersonComponent {
+
+}
+
+@Component({
+	.. features
+})
+class OrderComponent {
+
+}
+
+A Decorator is a special kind of declaration that can be attached to a class declaration, method, accessor, property, or parameter. 
+Decorators use the form @expression , where expression must evaluate to a function that will be called at runtime with information about the decorated declaration.
+
+class ProductDecorator {
+
+	@Min(5)
+	title:string;
+
+	setName(@Upper name:string) {
+
+	}
+
+	@Required
+	setEmail(email:string) {
+
+	}
+}
+
+============
+
+Decorators are simple functions
+
+tsconfig.json
+"experimentalDecorators": true,  
+// "strict": true, 
+
+export default function Course(target:any){
+    console.log("Decorator called!!!")
+}
+
+------------
+import Course from "./Course";
+@Course
+export default class Person {
+
+
+
+
 
 
 
