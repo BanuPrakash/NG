@@ -841,8 +841,111 @@ import Course from "./Course";
 export default class Person {
 
 
+=======================================================
 
+Angular
 
+Rendering ==> data to presentation
+CSR --> Client Side Rendering
+SSR --> Server Side Rendering [traditional web application]
 
+CSR:
+1) DOM library
+document.createElement()
+document.getElementById()
+document.querySelectory()
+...
 
+2) jQuery --> simplfied DOM handling
+$("<div/>") ==> document.createElement("div")
+$("div") ==> document.querySelectorAll("div")
+
+3) Templates: HandleBars, Mustache, Underscore , jqueryTemplate, knockout
+
+Server sends:
+{
+    firstname: "Yehuda",
+    lastname: "Katz",
+}
+
+Templates were created like:
+<div class="card">
+	<p>{{firstname}} {{lastname}}</p>
+</div>
+
+Output on Browser
+Yehuda Katz
+
+4) SPA --> Single Page Application --> index.html
+4.1) 
+different URLs should display different views
+http://cisco.com
+http://cisco.com/products
+http://cisco.com/products/webex
+http://cisco.com/clients
+http://cisco.com/clients/us
+http://cisco.com/locations
+
+4.2) Modularize --> cart module , product module , payment module, customer module
+handle dependencies between module
+
+4.3) Lazy loading modules
+
+4.4) Secure routes
+http://amazon.com/cart
+
+4.5) data binding
+--> two-way binding
+
+-----------------------
+MVC pattern ==> Model View Controller
+
+* Backbone --> Library --> Model and Controller ==> we have to pick any templates for view
+
+* AngularJS [ 1 - 1.6 version] --> Google --> MVC pattern --> MVVP --> Framework
+digest, apply cycle ==> issues with rendering
+
+* React --> Facebook --> View library
+
+* Angular -> [2 -- 14] 
+
+=========================
+
+Angular --> Framework
+
+Why?
+* Modularized ==> allows me to develop application as modules
+ CustomerModule, ProductModule, PaymentModule, CartModule
+* Dependency Injection : SOLID Design Principle
+* Two-way binding
+* Routers
+
+===================
+
+1) Module ==> @NgModule
+2) Component --> @Component
+3) Services --> @Injectable [ platform, root, module]
+4) Router Module
+5) Directives
+	--> can be used along with DOM elements and Component
+	--> to introduce additional behaviours which does not imply to CRUD operations of component
+	--> hover over a component
+		<app-product highlight></app-product>
+		app-product is a component
+		highlight is a directive
+6) Pipe --> to transform data
+	{{firstName | upper}}
+7) Guards
+8) HttpInterceptors: add JWT token for every request
+
+--------------------
+The Angular CLI is a command-line interface tool that you use to initialize, develop, 
+scaffold, and maintain Angular applications directly from a command shell.
+
+npm install -g @angular/cli
+
+Other options:
+webpack --> configure ts-loader, css-loader, Html-webpack-plugin, install dependecies
+
+============
 
