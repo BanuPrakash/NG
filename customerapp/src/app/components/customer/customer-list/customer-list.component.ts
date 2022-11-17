@@ -56,4 +56,7 @@ export class CustomerListComponent implements OnInit {
     ];
   }
 
+  deleteCustomerFromList(id:number) {
+    this.customers = this.customers.filter(c => c.id !== id);
+  }
 }

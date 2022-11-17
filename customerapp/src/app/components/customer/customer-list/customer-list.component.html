@@ -1,1 +1,4 @@
-<app-customer-card [customers] = "customers"></app-customer-card>
+<app-customer-card 
+(delEvent) = "deleteCustomerFromList($event)"
+[customers] = "customers">
+</app-customer-card>
