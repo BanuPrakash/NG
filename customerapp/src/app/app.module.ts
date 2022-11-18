@@ -37,6 +37,10 @@ const routes:Route[] = [
     component:CustomerListComponent
   },
   {
+    path:'orders', /* lazy loading module */
+    loadChildren:() => import('./orders/orders.module').then(m => m.OrdersModule)
+  },
+  {
     path:'**',
     component:CustomerListComponent
   }
