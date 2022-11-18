@@ -1101,3 +1101,62 @@ class CustomerCardComponent {}
 Assignment:
 1) Toggle between Card View and List View
 2) Product
+
+model/Product.ts
+componetns in "app/components/products" folder
+shared/services/ProductService.ts
+app.module.ts ---> add component entry
+
+==========================================
+
+RxJs --> Push based
+Reactive programming is an asynchronous paradigm concerned with data streams
+and propagation of change
+
+Observable : Subject is a type of Observable
+Observers are listeners to any change in Observable
+
+Promise Api for async VS RxJS
+https://rxmarbles.com/
+
+Example 1:
+```
+
+import { interval, pipe, take, filter, tap, shareReplay } from 'rxjs';
+
+const observable = interval(5000).pipe(
+  take(10),
+  filter((n) => n % 2 == 0),
+  tap((n) => console.log('Observable : ' + n)),
+  shareReplay()
+);
+
+observable.subscribe((n) => {
+  console.log('Observer 1: ' + n);
+});
+
+observable.subscribe((n) => {
+  console.log('Observer 2: ' + n);
+});
+
+```
+
+Example 2:
+
+```
+import { pipe, fromEvent } from 'rxjs';
+
+import { debounceTime } from 'rxjs/operators';
+
+const mouseMove = fromEvent<MouseEvent>(
+  document.getElementById('head'),
+  'mousemove'
+).pipe(debounceTime(1000));
+
+const subscription = mouseMove.subscribe((evt) => {
+  console.log(evt.clientX, evt.clientY);
+});
+
+```
+
+
