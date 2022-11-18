@@ -15,6 +15,32 @@ import {HttpClientModule} from '@angular/common/http';
 import { HoverDirective } from './shared/directives/hover.directive';
 import { TextConverterPipe } from './shared/pipe/text-converter.pipe';
 import { FilterByBrandPipe } from './shared/pipe/filter-by-brand.pipe';
+import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
+import { Route, RouterModule } from '@angular/router';
+
+
+const routes:Route[] = [
+  {
+    path:'customers',
+    component:CustomerListComponent
+  },
+  {
+    path:'products',
+    component:ProductListComponent
+  },
+  {
+    path:'customers/edit/:id',
+    component:CustomerEditComponent
+  },
+  {
+    path:'',
+    component:CustomerListComponent
+  },
+  {
+    path:'**',
+    component:CustomerListComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -28,10 +54,11 @@ import { FilterByBrandPipe } from './shared/pipe/filter-by-brand.pipe';
     ProductCardComponent,
     HoverDirective,
     TextConverterPipe,
-    FilterByBrandPipe
+    FilterByBrandPipe,
+    CustomerEditComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
