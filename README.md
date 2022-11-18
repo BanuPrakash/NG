@@ -1193,5 +1193,16 @@ http://localhost:1234/orders
 
 ng g service /shared/services/data
 
+app.module.ts
+import {HttpClientModule} from '@angular/common/http';
+
+ imports: [
+    BrowserModule, FormsModule, HttpClientModule
+ ]
+
+=======
+
+Resume @ 11:10
+
 
 
