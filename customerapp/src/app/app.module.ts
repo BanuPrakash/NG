@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { CustomerRowComponent } from './components/customer/customer-row/customer-row.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
+import { ProductCardComponent } from './components/products/product-card/product-card.component';
+import { ProductListComponent } from './components/products/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SecondComponent } from './second/second.component';
     CustomerCardComponent,
     CustomerRowComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    ProductListComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule, FormsModule

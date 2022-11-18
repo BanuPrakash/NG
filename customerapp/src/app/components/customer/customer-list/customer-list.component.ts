@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/shared/model/Customer';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css']
+  styleUrls: ['./customer-list.component.css'],
+  providers: [SharedService]
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
@@ -59,6 +61,9 @@ export class CustomerListComponent implements OnInit {
     ];
   }
 
+  changeTo(type:string): void {
+    this.displayType = type;
+  }
   deleteCustomerFromList(id:number) {
     this.customers = this.customers.filter(c => c.id !== id);
   }

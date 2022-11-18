@@ -1032,7 +1032,72 @@ ng add @cypress/schematic
 for e2e testing application should be running
 
 ======================
+Services
 
-Resume @ 4:10
+--> Business Logic
+--> API calls
+--> Communication between components
+
+Observer / Observable Design Pattern
+
+A Subject is a special type of Observable that allows values to be multicasted to many Observers
+
+create a SharedService.ts
+ng g service shared/services/shared
 
 
+DependencyInjectable
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SharedService {
+
+  constructor() { }
+}
+
+
+----------------
+
+
+Day 3
+angular.json --> wrapper for webpack.config.js
+
+main.ts -> bootstrap AppModule [ collection of components / services / directives / pipes / guards/ ..]
+
+AppModule --> boostraps --> Starting Component --> selector of starting component
+should be placed in "index.html"
+
+Starting Component --> load other components
+
+Component has selector, template / templateURL , styles / styleURL
+
+@Input()
+@Output() -->EventEmitter --> to propagate event to Parent
+
+Services are Injectable
+@Injectable --> providedIn:'root' / providedIn:UserModule
+by default services are singleton by default
+
+Below code gives different instances of SharedService to CustomerListComponent and CustomerCardComponent
+
+@Injectable({})
+class SharedService {}
+
+@Component({
+   
+  providers: [SharedService]
+})
+class CustomerListComponent {}
+
+
+@Component({
+     providers: [SharedService]
+})
+class CustomerCardComponent {}
+
+-------------------------------------
+
+Assignment:
+1) Toggle between Card View and List View
+2) Product
