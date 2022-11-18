@@ -13,6 +13,8 @@ import { ProductListComponent } from './components/products/product-list/product
 
 import {HttpClientModule} from '@angular/common/http';
 import { HoverDirective } from './shared/directives/hover.directive';
+import { TextConverterPipe } from './shared/pipe/text-converter.pipe';
+import { FilterByBrandPipe } from './shared/pipe/filter-by-brand.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HoverDirective } from './shared/directives/hover.directive';
     SecondComponent,
     ProductListComponent,
     ProductCardComponent,
-    HoverDirective
+    HoverDirective,
+    TextConverterPipe,
+    FilterByBrandPipe
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

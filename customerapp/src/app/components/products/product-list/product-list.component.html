@@ -22,10 +22,9 @@
       <div class="col-md-9">
         <div class="container">
           <div class="row">
-            <div class="col-sm-4 mb-2" *ngFor="let product of productList">
+            <div class="col-sm-4 mb-2" *ngFor="let product of productList | filterByBrand : selectedBrand">
               <app-product-card [product]="product"></app-product-card>
-            </div>
-          </div>
+            </div></div>
         </div>
         <!--/.Card-->
       </div>

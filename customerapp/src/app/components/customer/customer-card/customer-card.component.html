@@ -2,7 +2,7 @@
     <div class="row">
         <div appHover class="card col-md-4 col-lg-3" *ngFor="let customer of customers">
             <div class="card-header">
-                {{customer.firstName}} {{customer.lastName}}
+                {{customer.firstName | textConverter : 'upper'}} {{customer.lastName}}
                 <a class="float-right fa fa-trash" (click)="deleteCustomer(customer.id)"></a>
             </div>
             <div class="card-body">
