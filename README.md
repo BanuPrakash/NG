@@ -1276,6 +1276,134 @@ ngOnInit() {
 
 =====================================
 
+* Module
+* Component
+* Service
+* Directive
+* Pipe
+* Router
+
+Directives are classes that add additional behavior to elements [DOM / Component] in your Angular applications.
+
+Built-in directives
+* NgFor	Repeat a node for each item in a list.
+* NgIf	Conditionally creates or disposes of subviews from the template.
+* NgSwitch
+
+Component should have only behaviour --> CRUD of model which it represents
+
+ng generate directive shared/directives/hover
+
+@Directive({
+  selector: '[appHover]'
+})
+
+selector is a property selector:
+
+<div appHover></div>
+
+<appHover></appHover> // won't work
+
+Directives --> won't have templates and styles
+
+in components:
+<div (mouseover)="handler()">
+
+<div appHover class="card col-md-4 col-lg-3" *ngFor="let customer of customers">
+     
+Pipe:
+Transforming Data Using Pipes
+
+Use pipes to transform strings, currency amounts, dates, and other data for display.
+Pre-defined Pipes:
+DatePipe ->	Formats a date value according to locale rules.
+UpperCasePipe ->	Transforms text to all upper case.
+LowerCasePipe ->	Transforms text to all lower case.
+CurrencyPipe ->	Transforms a number to a currency string, formatted according to locale rules.
+DecimalPipe	-> Transforms a number into a string with a decimal point, formatted according to locale rules.
+PercentPipe	-> Transforms a number to a percentage string, formatted according to locale rules.
+
+firstName is a state in component:
+{{ firstName | uppercase }}
+
+amount is state in component:
+
+{{ amount | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ] }}
+
+
+------------
+
+Custom pipes:
+
+ng g pipe shared/pipe/text-converter
+
+FilterByBrand:
+ *ngFor="let product of productList | filterByBrand : selectedBrand"
+
+ 
+=====================
+
+https://www.primefaces.org/primeng/
+
+KendoUI
+
+@ViewChild
+
+#templateRef
+
+<input #ref type="text" />
+
+Example:
+```
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { HelloComponent } from './hello.component';
+
+@Component({
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+  @ViewChild('ref')
+  txtRef: ElementRef;
+
+  @ViewChild(HelloComponent)
+  helloComp: HelloComponent;
+
+  // life cycle method waits for children also to be initialized
+  ngAfterViewInit() {
+    this.txtRef.nativeElement.value = 'Testing 123111';
+    // this.txtRef.nativeElement.focus();
+    this.helloComp.doTask();
+  }
+}
+
+<p>Start editing to see some magic happen :)</p>
+<input #ref type="text" />
+<hello></hello>
+
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'hello',
+  template: `<h1>Hello Component</h1>`,
+  styles: [`h1 { font-family: Lato; }`],
+})
+export class HelloComponent {
+  doTask() {
+    console.log('task in Hello Component');
+  }
+}
+
+```
+
+https://stackblitz.com/edit/angular-ivy-ddz16c
+
+
+
+
+
+
 
 
 
