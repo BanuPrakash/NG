@@ -11,6 +11,8 @@ import { SecondComponent } from './second/second.component';
 import { ProductCardComponent } from './components/products/product-card/product-card.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { ProductListComponent } from './components/products/product-list/product
     ProductCardComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

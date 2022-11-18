@@ -1159,4 +1159,39 @@ const subscription = mouseMove.subscribe((evt) => {
 
 ```
 
+JSON Server : Get a full fake REST API with zero coding
+
+needs a json file which acts like a datastore + endpoints
+
+data.json
+
+{
+  movies: [{..}, {...}],
+  actors: [{...}, {...}]
+}
+
+GET
+http://server/movies
+http://server/movies/4
+http://server/movies?genre=action
+
+POST
+http://server/movies
+
+PUT and DELETE operations are supported
+
+npm install -g json-server
+json-server --watch data.json --port 1234
+
+OR
+npx json-server --watch data.json --port 1234
+
+http://localhost:1234/customers
+http://localhost:1234/customers/2
+http://localhost:1234/customers?gender=male
+http://localhost:1234/orders
+
+ng g service /shared/services/data
+
+
 
