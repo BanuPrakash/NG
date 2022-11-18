@@ -12,6 +12,7 @@ import { ProductCardComponent } from './components/products/product-card/product
 import { ProductListComponent } from './components/products/product-list/product-list.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { HoverDirective } from './shared/directives/hover.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
     FirstComponent,
     SecondComponent,
     ProductListComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule
