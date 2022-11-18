@@ -1407,15 +1407,76 @@ https://stackblitz.com/edit/angular-ivy-ddz16c
 * customer-edit with Router
  
 
+ ====================
+
+rxjs and @ViewChild()
+
+
+Routes used in SPA: index.html
+
+http://localhost:4200/
+HomeComponent
+
+http://localhost:4200/customers
+CustomerListComponent
+
+http://localhost:4200/products
+ProductListComponent
+
+
+http://localhost:4200/customers/edit/2
+CustomerEditComponent to edit customer with id "2"
+
+---
+
+Adding Modules:
+ng g module orders
+
+Adding componentst to a module:
+ng g c components/orders/order-list --module=orders
 
 
 
+order-module
+
+http://localhost:4200/orders
+
+const routes:Route[] = [
+  {
+    path:'', //http://localhost:4200/orders
+    component:OrderListComponent
+  },
+  {
+  	path:'dashboard', // http://localhost:4200/orders/dashboard
+  	compoent:OrderDashBoard
+  },
+  {
+  	path:'shipment', // http://localhost:4200/orders/shipment
+  	component:ShipmentComponent
+  }
+];
+
+---
+Guard
+CanActivate ==> only if user has logged-in orders route can be accessed
 
 
+window.sessionStorage.setItem("user","banu@gmail.com")
 
-
-
-
-
-
+```
+@Injectable({
+  providedIn: 'root'
+})
+export class LinkGuard implements CanActivate {
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    let user = window.sessionStorage.getItem('user');
+    if(user) {
+      return true;
+    }
+    return false;
+  }
+}
+```
 

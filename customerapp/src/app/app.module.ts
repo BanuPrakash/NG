@@ -17,6 +17,7 @@ import { TextConverterPipe } from './shared/pipe/text-converter.pipe';
 import { FilterByBrandPipe } from './shared/pipe/filter-by-brand.pipe';
 import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
 import { Route, RouterModule } from '@angular/router';
+import { LinkGuard } from './shared/guards/link-guard.guard';
 
 
 const routes:Route[] = [
@@ -38,6 +39,7 @@ const routes:Route[] = [
   },
   {
     path:'orders', /* lazy loading module */
+    canActivate:[LinkGuard],
     loadChildren:() => import('./orders/orders.module').then(m => m.OrdersModule)
   },
   {
